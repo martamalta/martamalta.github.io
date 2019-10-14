@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div id="modal-container" class="modal fade"></div>
+
+        <script type="text/javascript">
+$(document).ready(function(){
+var visit = getCookie("popup");
+if(visit == null){
+$('#modal-container').html('<section id="popup"><div class="modal-dialog"><div class="modal-content"><div class="modal-body"><h1>Olá,   É um prazer para nós receber a sua visita! </h1><p>Cadastre-se na nossa loja virtual para receber todas as novidades da Bemglô, além de ganhar um cupom de desconto na sua primeira compra 🙂  Se você já havia feito o cadastro na Bemglô, pedimos por gentileza que se cadastre novamente, pois estamos com essa nova plataforma para atendê-los melhor.</p><form action="https://www.bemglo.com/contact/newsletter_signup" method="post" accept-charset="utf-8"><input type="text" name="fullname" placeholder="Seu nome" value=""/><input type="text" name="email" placeholder="Seu email" value=""/><button type="submit">Cadastrar</button></form><span>Não divulgamos seu email</span><button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></button></div></div></div></section>');
+$('#modal-container').modal('show');
+var expire = new Date();
+expire = new Date(expire.getTime() + 86400000);
+document.cookie = "cookie=popup; expires=" + expire;
+}
+});
+</script>
+
+</body>
+</html>
